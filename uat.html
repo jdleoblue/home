@@ -60,16 +60,18 @@
       padding: 28px 7vw;
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .logo {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
       letter-spacing: -0.04em;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 34px;
       font-size: 0.72rem;
       letter-spacing: 0.34em;
@@ -79,10 +81,17 @@
     .nav-links a {
       opacity: 0.82;
       transition: opacity 0.2s ease;
+      line-height: 1;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links .active {
       opacity: 1;
+    }
+
+    .nav-links .active {
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 7px;
     }
 
     .hero {
@@ -438,7 +447,7 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       .nav {
         position: fixed;
         top: 0;
@@ -454,16 +463,18 @@
 
       .nav-links {
         display: flex;
+        align-items: center;
         gap: 12px;
         font-size: 0.55rem;
         letter-spacing: 0.16em;
         flex-wrap: wrap;
         justify-content: flex-end;
+        transform: translateY(14px);
       }
 
       .hero {
         min-height: 88vh;
-        padding-top: 130px;
+        padding-top: 160px;
         padding-bottom: 60px;
         background-position: 70% center;
       }
@@ -511,12 +522,13 @@
     <header class="nav">
       <a href="#top" class="logo">ByJDG</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#top">Home</a>
+        <a href="#top" class="active">Home</a>
         <!-- <a href="#latest">Latest</a> --> 
         <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
         <!-- <a href="#gear">Gear</a> -->
         <a href="#about">About</a>
-        <a href="#contact">Projects</a>
+        <!-- <a href="#contact">Projects</a> -->
+        <a href="https://www.byjdg.com/projects.html">Projects</a>
       </nav>
     </header>
 
@@ -554,7 +566,7 @@
             <div class="film-content">
               <div class="episode">Episode 2</div>
               <h3>Seeking &amp; Return</h3>
-              <p>New places, old thoughts, and the journey back to center.</p>
+              <p>    New places, Pilot Mountain, and a quiet evening in North Carolina.</p>
               <a class="watch-link" href="https://youtu.be/odL94MiIh2I?si=fMfCbbGF8Wfy_Hvk" target="_blank" rel="noopener">Watch Film →</a>
             </div>
           </article>
