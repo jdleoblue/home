@@ -440,8 +440,13 @@
 
     @media (max-width: 600px) {
       .nav {
-        position: absolute;
-        padding: 22px 6vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 18px 6vw;
+        background: rgba(0,0,0,0.72);
+        backdrop-filter: blur(12px);
       }
 
       .nav-links {
@@ -449,7 +454,10 @@
       }
 
       .hero {
-        padding: 120px 6vw 70px;
+        min-height: 88vh;
+        padding-top: 130px;
+        padding-bottom: 60px;
+        background-position: 70% center;
       }
 
       .section,
