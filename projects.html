@@ -403,12 +403,25 @@
 
     @media (max-width: 700px) {
       .nav {
-        position: absolute;
-        padding: 22px 6vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 18px 6vw;
+        background: rgba(0,0,0,0.72);
+        backdrop-filter: blur(12px);
       }
+      .logo {
+        font-size: 1.7rem;
+        } 
 
       .nav-links {
-        display: none;
+        display: flex;
+        gap: 12px;
+        font-size: 0.55rem;
+        letter-spacing: 0.16em;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
       .hero,
