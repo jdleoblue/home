@@ -49,7 +49,7 @@
     }
 
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -58,7 +58,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 28px 7vw;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.45);
       backdrop-filter: blur(12px);
     }
 
@@ -91,6 +91,7 @@
       display: flex;
       align-items: center;
       padding: 140px 7vw 80px;
+      padding-top: 120px;
       background:
         linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.15) 100%),
         linear-gradient(to top, #050505 0%, rgba(5,5,5,0.2) 38%, rgba(5,5,5,0.05) 100%),
@@ -546,7 +547,7 @@
             <div class="film-content">
               <div class="episode">Episode 3</div>
               <h3>Coming Soon</h3>
-              <p>New stories are on the way.</p>
+              <p>New stories are on the way. The journey is only beginning.</p>
               <a class="watch-link" href="https://www.youtube.com/" target="_blank" rel="noopener">Stay Tuned</a>
             </div>
           </article>
@@ -580,8 +581,15 @@
           <p>Collaborations, creative work, or just say hello.</p>
         </div>
 
-        <form class="contact-form" action="mailto:jdleoblue@icloud.com" method="post" enctype="text/plain">
-          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" />
+        <form class="contact-form" action="https://formspree.io/f/maqvrlrz" method="POST">
+          <input 
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            aria-label="Email address"
+            required
+          > 
+          
           <button type="submit">Send Message</button>
         </form>
       </section>
