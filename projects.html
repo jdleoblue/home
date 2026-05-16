@@ -1,1 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | ByJDG</title>
+  <meta name="description" content="Contact ByJDG for creative collaborations, video production, storytelling projects, brand work, and inquiries." />
 
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0b;
+      --text: #f5f1ea;
+      --muted: #b7b0a7;
+      --line: rgba(255, 255, 255, 0.14);
+      --panel: rgba(255, 255, 255, 0.045);
+      --accent: #d6b36a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 7vw;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.82;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      opacity: 1;
+    }
+
+    .nav-links .active {
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 7px;
+    }
+
+    .hero {
+      min-height: 64vh;
+      display: flex;
+      align-items: center;
+      padding: 150px 7vw 80px;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.62) 44%, rgba(0,0,0,0.25) 100%),
+        linear-gradient(to top, #050505 0%, rgba(5,5,5,0.18) 44%, rgba(5,5,5,0.02) 100%),
+        url('../images/contact-hero.jpg') center/cover no-repeat;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.44em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(3.1rem, 7vw, 6.4rem);
+      font-weight: 400;
+      line-height: 1.03;
+      letter-spacing: -0.065em;
+      margin-bottom: 30px;
+    }
+
+    .hero-line {
+      width: 58px;
+      height: 1px;
+      background: var(--text);
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .hero p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      padding: 78px 7vw;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-title {
+      font-size: 0.86rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .intro-copy {
+      color: var(--muted);
+      max-width: 430px;
+      margin-bottom: 42px;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 30px;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .service-item h3 {
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+    }
+
+    .service-item p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 430px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(0,0,0,0.26);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 18px 20px;
+      outline: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(214,179,106,0.55);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.52);
+    }
+
+    .contact-form select {
+      appearance: none;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .button {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid var(--line);
+      padding: 18px 28px;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.035);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .button:hover {
+      border-color: rgba(255,255,255,0.42);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 18px;
+    }
+
+    .connect-section {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      padding: 58px 7vw;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .connect-links {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .connect-link {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    .connect-link span:first-child {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 0.86rem;
+    }
+
+    .footer-visual {
+      margin: 0;
+      padding: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.34), rgba(0,0,0,0.52)),
+        url('../images/contact-footer.jpg') center/cover no-repeat;
+      min-height: 360px;
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-card {
+      margin: 0 7vw;
+      border: 1px solid rgba(255,255,255,0.22);
+      min-height: 260px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      background: rgba(0,0,0,0.24);
+      backdrop-filter: blur(3px);
+    }
+
+    .quote-box,
+    .location-box {
+      padding: 48px 5vw;
+    }
+
+    .quote-box {
+      border-right: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .quote-box blockquote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2.6rem);
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
+
+    .quote-box p,
+    .location-box p {
+      color: var(--muted);
+    }
+
+    .location-box h2 {
+      font-size: 0.86rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .state-line {
+      margin-top: 28px;
+      height: 1px;
+      width: 80%;
+      background: linear-gradient(to right, rgba(255,255,255,0.12), var(--accent), rgba(255,255,255,0.12));
+    }
+
+    .footer {
+      padding: 30px 7vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      background: #050505;
+      font-size: 0.82rem;
+    }
+
+    .footer-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      font-size: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.68rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .contact-section,
+      .connect-section,
+      .footer-card {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-box {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.16);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        position: absolute;
+        padding: 22px 6vw;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .contact-section,
+      .connect-section {
+        padding-left: 6vw;
+        padding-right: 6vw;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-card {
+        margin: 0 6vw;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a href="../" class="logo">ByJDG</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../#about">About</a>
+      <a href="../#latest">Films</a>
+      <a href="../#latest">Journal</a>
+      <a href="../gear/">Gear</a>
+      <a href="./" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Contact</div>
+        <h1>Let’s Create<br>Something Meaningful.</h1>
+        <div class="hero-line"></div>
+        <p>Whether it is a brand project, a creative collaboration, or a story you want to bring to life — I would love to hear about it.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div>
+        <h2 class="section-title">Let’s Work Together</h2>
+        <p class="intro-copy">I am always open to new opportunities, collaborations, and projects that inspire creativity and purpose.</p>
+
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-icon">▣</div>
+            <div>
+              <h3>Filmmaking & Video Production</h3>
+              <p>Commercials, brand films, documentaries, social content, and cinematic storytelling.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">⌖</div>
+            <div>
+              <h3>Travel & Storytelling</h3>
+              <p>Capturing places, moments, and stories that connect with people emotionally.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">✉</div>
+            <div>
+              <h3>Collaborations</h3>
+              <p>Creative projects, partnerships, product features, and long-term brand work.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">✦</div>
+            <div>
+              <h3>Inquiries</h3>
+              <p>Have a project in mind? Let’s start a conversation and see what we can create.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-title">Send A Message</h2>
+
+        <form class="contact-form" action="https://formspree.io/f/maqvrlrz" method="POST">
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input class="full" type="text" name="company" placeholder="Company / Brand (Optional)">
+
+            <select class="full" name="project_type" required>
+              <option value="" disabled selected>Project Type</option>
+              <option value="Video Production">Video Production</option>
+              <option value="Brand Collaboration">Brand Collaboration</option>
+              <option value="Travel / Storytelling">Travel / Storytelling</option>
+              <option value="Photography">Photography</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+
+            <textarea class="full" name="message" placeholder="Tell me about your project" required></textarea>
+
+            <button class="button full" type="submit">Send Message →</button>
+          </div>
+        </form>
+
+        <p class="note">I’ll get back to you as soon as I can.</p>
+      </div>
+    </section>
+
+    <section class="connect-section">
+      <div>
+        <h2 class="section-title">Let’s Connect</h2>
+        <p class="intro-copy">You can also reach out directly or connect with me on social.</p>
+      </div>
+
+      <div class="connect-links">
+        <a class="connect-link" href="mailto:hello@byjdg.com">
+          <span>✉</span>
+          <div>Email: filmsbyjdg@icloud.com</div>
+        </a>
+        <a class="connect-link" href="https://www.instagram.com/by__jdg" target="_blank" rel="noopener">
+          <span>◎</span>
+          <div>Instagram: @by__jdg</div>
+        </a>
+        <a class="connect-link" href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">
+          <span>▶</span>
+          <div>YouTube: @by-jdg</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="footer-visual">
+      <div class="footer-card">
+        <div class="quote-box">
+          <blockquote>“Great stories come from real moments.”</blockquote>
+          <p>— ByJDG</p>
+        </div>
+        <div class="location-box">
+          <h2>Based in North Carolina</h2>
+          <p>Available for select projects, collaborations, and creative work.</p>
+          <div class="state-line"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">ByJDG</div>
+    <div>© 2026 ByJDG. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/by__jdg" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:filmsbyjdg@icloud.com">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
