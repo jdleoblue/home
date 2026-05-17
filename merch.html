@@ -90,6 +90,22 @@
       padding-bottom: 7px;
     }
 
+    .mobile-menu-button {
+      display: none;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    .menu-icon::before {
+      content: '☰';
+    }
+
+    body.menu-open .menu-icon::before {
+      content: '×';
+    }
+
     .cart-link {
       display: inline-flex;
       align-items: center;
@@ -410,12 +426,6 @@
     }
 
     @media (max-width: 950px) {
-      .nav-links {
-        gap: 18px;
-        font-size: 0.64rem;
-        letter-spacing: 0.22em;
-      }
-
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -435,34 +445,78 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 18px 6vw;
+        padding: 45px 6vw;
         background: rgba(0,0,0,0.72);
         backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu-button {
+        display: block;
+        background: transparent;
+        border: 0;
+        color: var(--text);
+        font-size: 2rem;
+        cursor: pointer;
+        line-height: 1;
+        position: absolute;
+        left: 6vw;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
       }
 
       .logo {
-        font-size: 1.7rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
       }
 
       .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58%;
+        max-width: 330px;
+        height: 100vh;
         display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.55rem;
-        letter-spacing: 0.16em;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 26px;
+        padding: 100px 38px 40px;
+        background: rgba(0,0,0,0.92);
+        backdrop-filter: blur(18px);
+        border-right: 1px solid rgba(255,255,255,0.12);
+        font-size: 0.72rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.35s ease, opacity 0.25s ease;
+        z-index: 101;
+      }
+
+      body.menu-open .nav-links {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
       }
 
       .hero {
         min-height: 78vh;
-        padding: 140px 6vw 70px;
+        padding: 160px 6vw 70px;
         background-position: 62% center;
       }
 
       .hero h1 {
         font-size: clamp(2.6rem, 12vw, 4.5rem);
-        letter-spacing: 0.2em;
+        letter-spacing: 0.02em;
       }
 
       .shop-section,
@@ -502,9 +556,15 @@
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
+    <button class="mobile-menu-button" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+      <span class="menu-icon"></span>
+    </button>
+
     <a href="../#top" class="logo">ByJDG</a>
+
     <nav class="nav-links" aria-label="Main navigation">
       <a href="../#top">Home</a>
       <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
@@ -514,178 +574,6 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Creator Goods</div>
-        <h1>Merch</h1>
-        <div class="hero-line"></div>
-        <p>Quality gear for those who create with intention, move with purpose, and carry the story forward.</p>
-      </div>
-    </section>
-
-    <section class="shop-section" id="shop">
-      <div class="section-header">
-        <h2 class="section-title">Shop All</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="filters" aria-label="Product filters">
-        <button class="filter-button active" type="button">All</button>
-        <button class="filter-button" type="button">Apparel</button>
-        <button class="filter-button" type="button">Accessories</button>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card">
-          <a href="#" aria-label="View ByJDG cap">
-            <div class="product-image">
-              <img src="../images/merch-cap-black.jpg" alt="Black ByJDG cap">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Cap</h2>
-              <p>Low-profile black cap with subtle tonal branding.</p>
-              <div class="product-row">
-                <span class="price">$35.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="product-card">
-          <a href="#" aria-label="View ByJDG tee">
-            <div class="product-image">
-              <img src="../images/merch-tee-black.jpg" alt="Black ByJDG t-shirt">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Tee</h2>
-              <p>Minimal black tee made for everyday creative work.</p>
-              <div class="product-row">
-                <span class="price">$35.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="product-card">
-          <a href="#" aria-label="View stone ByJDG cap">
-            <div class="product-image">
-              <img src="../images/merch-cap-stone.jpg" alt="Stone ByJDG cap">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Cap — Stone</h2>
-              <p>Light neutral cap with quiet cinematic branding.</p>
-              <div class="product-row">
-                <span class="price">$35.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="product-card">
-          <a href="#" aria-label="View bone ByJDG tee">
-            <div class="product-image">
-              <img src="../images/merch-tee-bone.jpg" alt="Bone ByJDG t-shirt">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Tee — Bone</h2>
-              <p>Warm neutral tee with a clean minimalist mark.</p>
-              <div class="product-row">
-                <span class="price">$35.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="product-card">
-          <a href="#" aria-label="View ByJDG camera sling">
-            <div class="product-image">
-              <img src="../images/merch-camera-sling.jpg" alt="Black ByJDG camera sling bag">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Camera Sling</h2>
-              <p>Compact carry for light shoots, small cameras, and daily essentials.</p>
-              <div class="product-row">
-                <span class="price">$90.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <article class="product-card">
-          <a href="#" aria-label="View ByJDG camera bag">
-            <div class="product-image">
-              <img src="../images/merch-camera-bag.jpg" alt="Black ByJDG camera bag">
-            </div>
-            <div class="product-info">
-              <h2>ByJDG Camera Bag</h2>
-              <p>Structured carry for camera gear, travel days, and creative work.</p>
-              <div class="product-row">
-                <span class="price">$120.00</span>
-                <span class="shop-link">View →</span>
-              </div>
-            </div>
-          </a>
-        </article>
-      </div>
-
-      <div class="note-card">
-        <div>
-          <h2>Made for the quiet creators.</h2>
-          <p>Simple pieces inspired by motion, stillness, and the creative process behind every story.</p>
-        </div>
-        <a class="button" href="#shop">Explore Merch →</a>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="feature">
-        <div class="feature-icon">✦</div>
-        <div>
-          <h3>Premium Quality</h3>
-          <p>Minimal goods designed to feel intentional and lasting.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">▣</div>
-        <div>
-          <h3>Creator Focused</h3>
-          <p>Caps, shirts, and bags made for everyday creative movement.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">⌁</div>
-        <div>
-          <h3>Quietly Branded</h3>
-          <p>Subtle pieces designed to feel timeless, minimal, and intentional.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">↻</div>
-        <div>
-          <h3>Intentional Design</h3>
-          <p>Minimal pieces inspired by motion, stillness, and storytelling.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-brand">ByJDG</div>
-    <div>© 2026 ByJDG. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-      <a href="mailto:hello@byjdg.com">Email</a>
-    </div>
-  </footer>
+  <!-- KEEP THE REST OF YOUR HTML EXACTLY THE SAME -->
 </body>
 </html>
