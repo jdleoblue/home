@@ -74,22 +74,6 @@
       text-transform: uppercase;
     }
 
-    .nav-links a {
-      opacity: 0.82;
-      transition: opacity 0.2s ease;
-      line-height: 1;
-    }
-
-    .nav-links a:hover,
-    .nav-links .active {
-      opacity: 1;
-    }
-
-    .nav-links .active {
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 7px;
-    }
-
     .mobile-menu-button {
       display: none;
     }
@@ -104,6 +88,22 @@
 
     body.menu-open .menu-icon::before {
       content: '×';
+    }
+
+    .nav-links a {
+      opacity: 0.82;
+      transition: opacity 0.2s ease;
+      line-height: 1;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      opacity: 1;
+    }
+
+    .nav-links .active {
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 7px;
     }
 
     .cart-link {
@@ -574,6 +574,178 @@
     </nav>
   </header>
 
-  <!-- KEEP THE REST OF YOUR HTML EXACTLY THE SAME -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Creator Goods</div>
+        <h1>Merch</h1>
+        <div class="hero-line"></div>
+        <p>Quality gear for those who create with intention, move with purpose, and carry the story forward.</p>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-header">
+        <h2 class="section-title">Shop All</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="filters" aria-label="Product filters">
+        <button class="filter-button active" type="button">All</button>
+        <button class="filter-button" type="button">Apparel</button>
+        <button class="filter-button" type="button">Accessories</button>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <a href="#" aria-label="View ByJDG cap">
+            <div class="product-image">
+              <img src="../images/merch-cap-black.jpg" alt="Black ByJDG cap">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Cap</h2>
+              <p>Low-profile black cap with subtle tonal branding.</p>
+              <div class="product-row">
+                <span class="price">$35.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="#" aria-label="View ByJDG tee">
+            <div class="product-image">
+              <img src="../images/merch-tee-black.jpg" alt="Black ByJDG t-shirt">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Tee</h2>
+              <p>Minimal black tee made for everyday creative work.</p>
+              <div class="product-row">
+                <span class="price">$35.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="#" aria-label="View stone ByJDG cap">
+            <div class="product-image">
+              <img src="../images/merch-cap-stone.jpg" alt="Stone ByJDG cap">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Cap — Stone</h2>
+              <p>Light neutral cap with quiet cinematic branding.</p>
+              <div class="product-row">
+                <span class="price">$35.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="#" aria-label="View bone ByJDG tee">
+            <div class="product-image">
+              <img src="../images/merch-tee-bone.jpg" alt="Bone ByJDG t-shirt">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Tee — Bone</h2>
+              <p>Warm neutral tee with a clean minimalist mark.</p>
+              <div class="product-row">
+                <span class="price">$35.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="#" aria-label="View ByJDG camera sling">
+            <div class="product-image">
+              <img src="../images/merch-camera-sling.jpg" alt="Black ByJDG camera sling bag">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Camera Sling</h2>
+              <p>Compact carry for light shoots, small cameras, and daily essentials.</p>
+              <div class="product-row">
+                <span class="price">$90.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="product-card">
+          <a href="#" aria-label="View ByJDG camera bag">
+            <div class="product-image">
+              <img src="../images/merch-camera-bag.jpg" alt="Black ByJDG camera bag">
+            </div>
+            <div class="product-info">
+              <h2>ByJDG Camera Bag</h2>
+              <p>Structured carry for camera gear, travel days, and creative work.</p>
+              <div class="product-row">
+                <span class="price">$120.00</span>
+                <span class="shop-link">View →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="note-card">
+        <div>
+          <h2>Made for the quiet creators.</h2>
+          <p>Simple pieces inspired by motion, stillness, and the creative process behind every story.</p>
+        </div>
+        <a class="button" href="#shop">Explore Merch →</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <div class="feature-icon">✦</div>
+        <div>
+          <h3>Premium Quality</h3>
+          <p>Minimal goods designed to feel intentional and lasting.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">▣</div>
+        <div>
+          <h3>Creator Focused</h3>
+          <p>Caps, shirts, and bags made for everyday creative movement.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⌁</div>
+        <div>
+          <h3>Quietly Branded</h3>
+          <p>Subtle pieces designed to feel timeless, minimal, and intentional.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">↻</div>
+        <div>
+          <h3>Intentional Design</h3>
+          <p>Minimal pieces inspired by motion, stillness, and storytelling.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">ByJDG</div>
+    <div>© 2026 ByJDG. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@byjdg.com">Email</a>
+    </div>
+  </footer>
 </body>
 </html>
