@@ -79,18 +79,19 @@
     }
 
     .mobile-menu-button {
-      position: relative;
-      z-index: 150;
-    } 
+      display: none;
+    }
 
-    body.menu-open .menu-icon {
-      font-size: 0;
+    .menu-icon {
+      display: block;
+    }
+
+    .menu-icon::before {
+      content: '☰';
     } 
 
     body.menu-open .menu-icon::before {
       content: '×';
-      font-size: 2.2rem;
-      line-height: 1;
     }
 
     .nav-links a {
@@ -481,10 +482,12 @@
         background: transparent;
         border: 0;
         color: var(--text);
-        font-size: 1.6rem;
+        font-size: 2rem;
         cursor: pointer;
         text-align: left;
         line-height: 1;
+        position: relative;
+        z-index: 150;
       }
 
       .logo {
@@ -577,7 +580,7 @@
   <div class="page">
     <header class="nav">
       <button class="mobile-menu-button" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
-        <span class="menu-icon">☰</span>
+        <span class="menu-icon"></span>
       </button>
 
       <a href="#top" class="logo">ByJDG</a>
