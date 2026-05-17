@@ -484,15 +484,16 @@
       .nav-links {
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 78%;
+        left: 0%;
+        width: 58%;
         max-width: 320px;
         height: 100vh;
         display: flex;
         flex-direction: column;
-        gap: 28px;
+        align-items: flex-start;
+        gap: 34px;
         padding: 120px 38px 40px;
-        background: #050505;
+        background: rgba(0,0,0,0.92);
         backdrop-filter: blur(18px);
         border-right: 1px solid rgba(255,255,255,0.12);
         font-size: 0.72rem;
@@ -504,14 +505,14 @@
       }
 
       body.menu-open .nav-links {
-        left: 0;
+        transform: translateX(0);
       }
 
       body.menu-open::after {
         content: '';
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.55);
+        background: rgba(0,0,0,0.58);
         z-index: 80;
       }
 
@@ -564,7 +565,7 @@
   <div class="page">
     <header class="nav">
       <button class="mobile-menu-button" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
-        ☰
+        <span class="menu-icon">☰</span>
       </button>
 
       <a href="#top" class="logo">ByJDG</a>
