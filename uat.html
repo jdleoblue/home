@@ -479,6 +479,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 120;
       }
 
       .mobile-menu-button {
@@ -527,7 +528,7 @@
         visibility: hidden;
         transform: translateX(-100%);
         transition: transform 0.35s ease, opacity 0.25s ease;
-        z-index: 101;
+        z-index: 150;
       }
 
       body.menu-open .nav-links {
@@ -543,12 +544,14 @@
         background: transparent;
         opacity: 0;
         visibility: hidden;
-        z-index: 90;
+        pointer-events: none;
+        z-index: 100;
       }
 
       body.menu-open .nav-overlay {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
       }
 
       .hero {
@@ -612,9 +615,9 @@
         <a href="#about">About</a>
         <a href="https://www.byjdg.com/projects.html">Projects</a>
       </nav>
-
-      <div class="nav-overlay" onclick="closeMenu()"></div>
     </header>
+
+    <div class="nav-overlay" onclick="closeMenu()"></div>
 
     <main id="top">
       <section class="hero">
