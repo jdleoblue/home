@@ -472,9 +472,9 @@
         padding: 18px 6vw;
         background: rgba(0,0,0,0.72);
         backdrop-filter: blur(12px);
-        display: grid;
-        grid-template-columns: 44px 1fr 44px;
+        display: flex;
         align-items: center;
+        justify-content: center;
       }
 
       .mobile-menu-button {
@@ -493,8 +493,10 @@
       }
 
       .logo {
-        justify-self: center;
-        font-size: 1.7rem;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 1.7rem;
         } 
 
       .nav-links {
