@@ -519,13 +519,17 @@
         letter-spacing: 0.32em;
         text-transform: uppercase;
         text-align: left;
+        opacity: 0;
+        visibility: hidden;
         transform: translateX(-100%);
-        transition: transform 0.35s ease;
+        transition: transform 0.35s ease, opacity 0.25s ease;
         z-index: 101;
       }
 
       body.menu-open .nav-links {
         transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
       }
 
       .hero {
