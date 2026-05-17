@@ -78,6 +78,10 @@
       text-transform: uppercase;
     }
 
+    .mobile-menu-button {
+      display: none;
+    } 
+
     .nav-links a {
       opacity: 0.82;
       transition: opacity 0.2s ease;
@@ -456,22 +460,48 @@
         padding: 18px 6vw;
         background: rgba(0,0,0,0.72);
         backdrop-filter: blur(12px);
+        display: grid;
+        grid-template-columns: 44px 1fr 44px;
+        align-items: center;
       }
+
+      .mobile-menu-button {
+        display: block;
+        background: transparent;
+        border: 0;
+        color: var(--text);
+        font-size: 1.6rem;
+        cursor: pointer;
+        text-align: left;
+        line-height: 1;
+      }
+
       .logo {
+        justify-self: center;
         font-size: 1.7rem;
         } 
 
       .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.55rem;
-        letter-spacing: 0.16em;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        transform: translateY(14px);
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 22px;
+        padding: 34px 7vw 38px;
+        background: rgba(0,0,0,0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.72rem;
+        letter-spacing: 0.32em;
+        text-align: center;
+        transform: none;
       }
 
+      body.menu-open .nav-links {
+        display: flex;
+      }
       .hero {
         min-height: 88vh;
         padding-top: 160px;
@@ -520,15 +550,17 @@
 <body>
   <div class="page">
     <header class="nav">
+      <button class="mobile-menu-button" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+        ☰
+      </button>
+
       <a href="#top" class="logo">ByJDG</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#top" class="active">Home</a>
-        <!-- <a href="#latest">Latest</a> --> 
         <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
-        <!-- <a href="#gear">Gear</a> -->
         <a href="#about">About</a>
-        <!-- <a href="#contact">Projects</a> -->
         <a href="https://www.byjdg.com/projects.html">Projects</a>
+        <!-- <a href="https://www.byjdg.com/merch.html">Merch</a> -->  
       </nav>
     </header>
 
