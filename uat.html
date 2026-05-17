@@ -483,25 +483,39 @@
 
       .nav-links {
         position: fixed;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        display: none;
+        top: 0;
+        left: -100%;
+        width: 78%;
+        max-width: 320px;
+        height: 100vh;
+        display: flex;
         flex-direction: column;
-        gap: 22px;
-        padding: 34px 7vw 38px;
-        background: rgba(0,0,0,0.92);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        gap: 28px;
+        padding: 120px 38px 40px;
+        background: rgba(5,5,5,0.96);
+        backdrop-filter: blur(18px);
+        border-right: 1px solid rgba(255,255,255,0.08);
         font-size: 0.72rem;
         letter-spacing: 0.32em;
-        text-align: center;
-        transform: none;
+        text-transform: uppercase;
+        text-align: left;
+        transition: left 0.35s ease;
+        z-index: 100;
       }
 
       body.menu-open .nav-links {
-        display: flex;
+        left: 0;
       }
+
+      body.menu-open::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(2px);
+        z-index: 80;
+      }
+
       .hero {
         min-height: 88vh;
         padding-top: 160px;
