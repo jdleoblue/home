@@ -486,8 +486,10 @@
         cursor: pointer;
         text-align: left;
         line-height: 1;
-        position: relative;
-        z-index: 200;
+        position: fixed;
+        top: 18px;
+        left: 6vw;
+        z-index: 999;
       }
 
       .logo {
@@ -521,14 +523,6 @@
 
       body.menu-open .nav-links {
         transform: translateX(0);
-      }
-
-      body.menu-open::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.58);
-        z-index: 70;
       }
 
       .hero {
