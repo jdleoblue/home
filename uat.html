@@ -94,6 +94,10 @@
       content: '×';
     }
 
+    .nav-overlay {
+      display: none;
+    }
+
     .nav-links a {
       opacity: 0.82;
       transition: opacity 0.2s ease;
@@ -493,11 +497,11 @@
       }
 
       .logo {
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: 2rem;
-        } 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+      } 
 
       .nav-links {
         position: fixed;
@@ -528,6 +532,23 @@
 
       body.menu-open .nav-links {
         transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: 100;
+      }
+
+      body.menu-open .nav-overlay {
         opacity: 1;
         visibility: visible;
       }
@@ -577,21 +598,24 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header class="nav">
-      <button class="mobile-menu-button" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+      <button class="mobile-menu-button" aria-label="Open menu" onclick="toggleMenu()">
         <span class="menu-icon"></span>
       </button>
 
       <a href="#top" class="logo">ByJDG</a>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#top" class="active">Home</a>
         <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
         <a href="#about">About</a>
         <a href="https://www.byjdg.com/projects.html">Projects</a>
-        <!-- <a href="https://www.byjdg.com/merch.html">Merch</a> -->  
       </nav>
+
+      <div class="nav-overlay" onclick="closeMenu()"></div>
     </header>
 
     <main id="top">
@@ -628,7 +652,7 @@
             <div class="film-content">
               <div class="episode">Episode 2</div>
               <h3>Seeking &amp; Return</h3>
-              <p>    New places, Pilot Mountain, and a quiet evening in North Carolina.</p>
+              <p>New places, Pilot Mountain, and a quiet evening in North Carolina.</p>
               <a class="watch-link" href="https://youtu.be/odL94MiIh2I?si=fMfCbbGF8Wfy_Hvk" target="_blank" rel="noopener">Watch Film →</a>
             </div>
           </article>
@@ -695,5 +719,19 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('menu-open');
+    }
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 </body>
 </html>
