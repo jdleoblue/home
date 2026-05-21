@@ -69,6 +69,26 @@
       letter-spacing: -0.04em;
     }
 
+    .logo-with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-with-icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+      border-radius: 7px;
+    }
+
+    .logo-with-icon span {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      letter-spacing: -0.04em;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -607,7 +627,10 @@
         <span class="menu-icon"></span>
       </button>
 
-      <a href="#top" class="logo">ByJDG</a>
+      <a href="#top" class="logo logo-with-icon">
+        <img src="images/byjdg-logo.png" alt="ByJDG logo">
+        <span>ByJDG</span>
+      </a>
 
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#top" class="active">Home</a>
