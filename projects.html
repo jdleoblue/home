@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="white">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,7 +113,7 @@
       background:
         linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.62) 44%, rgba(0,0,0,0.25) 100%),
         linear-gradient(to top, #050505 0%, rgba(5,5,5,0.18) 44%, rgba(5,5,5,0.02) 100%),
-        url('../images/contact-hero-image.png') center/cover no-repeat;
+        url('images/contact-hero-image.png') center/cover no-repeat;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -322,7 +322,7 @@
       padding: 0;
       background:
         linear-gradient(rgba(0,0,0,0.34), rgba(0,0,0,0.52)),
-        url('../images/contact-footer.jpg') center/cover no-repeat;
+        var(--bg-soft);
       min-height: 360px;
       display: grid;
       align-items: center;
@@ -447,7 +447,8 @@
         cursor: pointer;
         line-height: 1;
         position: absolute;
-        left: 6vw;
+        left: auto;
+        right: 6vw;
         top: 50%;
         transform: translateY(-50%);
         z-index: 999;
@@ -513,7 +514,8 @@
       .hero,
       .contact-section,
       .connect-section {
-        padding-left: 6vw;
+        padding-left: auto;
+        right: 6vw;
         padding-right: 6vw;
       }
 
@@ -535,6 +537,28 @@
       }
     }
   </style>
+
+<style id="projects-appearance">
+html[data-theme="white"] { color-scheme: light; --bg:#f5f3ee; --bg-soft:#eeece6; --text:#24221e; --muted:#59564f; --line:rgba(40,36,28,.2); --panel:rgba(255,255,255,.65); --accent:#806025; }
+html[data-theme="white"] .nav { background:rgba(255,255,255,.88); border-color:var(--line); }
+html[data-theme="white"] .nav-links { background:transparent; }
+html[data-theme="white"] .hero { --text:#f5f1ea; --muted:#b7b0a7; color:var(--text); }
+html[data-theme="white"] .contact-section,
+html[data-theme="white"] .connect-section { background:var(--bg); border-color:var(--line); }
+html[data-theme="white"] .contact-form input,
+html[data-theme="white"] .contact-form select,
+html[data-theme="white"] .contact-form textarea,
+html[data-theme="white"] .button { background:rgba(255,255,255,.65); color:var(--text); border-color:var(--line); }
+html[data-theme="white"] .contact-form input::placeholder,
+html[data-theme="white"] .contact-form textarea::placeholder { color:var(--muted); }
+html[data-theme="white"] select option { background:var(--bg); color:var(--text); }
+html[data-theme="white"] .footer-visual { background:var(--bg-soft); border-color:var(--line); }
+html[data-theme="white"] .footer-card { background:rgba(255,255,255,.65); border-color:var(--line); backdrop-filter:blur(12px); }
+html[data-theme="white"] .quote-box { border-color:var(--line); }
+html[data-theme="white"] .footer { background:var(--bg); }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:650px) { html[data-theme="white"] .nav-links { background:rgba(255,255,255,.96); } }
+</style>
 </head>
 
 <body>
@@ -543,12 +567,12 @@
       <span class="menu-icon"></span>
     </button>
 
-    <a href="https://www.byjdg.com/#top" class="logo">ByJDG</a>
+    <a href="./index.html#top" class="logo">ByJDG</a>
 
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="https://www.byjdg.com/#top">Home</a>
+      <a href="./index.html#top">Home</a>
       <a href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.byjdg.com/#about">About</a>
+      <a href="./index.html#about">About</a>
       <a href="./projects.html" class="active">Projects</a>
     </nav>
   </header>
@@ -558,57 +582,57 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <div class="eyebrow">Projects</div>
-        <h1>Let’s Create<br>Something Meaningful.</h1>
+        <div class="eyebrow" data-project-field="eyebrow">Projects</div>
+        <h1 data-project-field="title">Let’s Create<br>Something Meaningful.</h1>
         <div class="hero-line"></div>
-        <p>Whether it is a brand project, a creative collaboration, or a story you want to bring to life — I'd love to hear about it.</p>
+        <p data-project-field="intro">Whether it is a brand project, a creative collaboration, or a story you want to bring to life — I&#39;d love to hear about it.</p>
       </div>
     </section>
 
     <section class="contact-section">
       <div>
-        <h2 class="section-title">Let’s Work Together</h2>
-        <p class="intro-copy">I’m always open to new opportunities, collaborations, and creative projects that feel meaningful.</p>
+        <h2 class="section-title" data-project-field="contactTitle">Let’s Work Together</h2>
+        <p class="intro-copy" data-project-field="contactIntro">I’m always open to new opportunities, collaborations, and creative projects that feel meaningful.</p>
 
         <div class="service-list">
           <div class="service-item">
             <div class="service-icon">▣</div>
             <div>
-              <h3>Filmmaking & Video Production</h3>
-              <p>Commercials, brand films, documentaries, social content, and cinematic storytelling.</p>
+              <h3 data-project-field="service0Title">Filmmaking &amp; Video Production</h3>
+              <p data-project-field="service0Text">Commercials, brand films, documentaries, social content, and cinematic storytelling.</p>
             </div>
           </div>
 
           <div class="service-item">
             <div class="service-icon">⌖</div>
             <div>
-              <h3>Travel & Storytelling</h3>
-              <p>Capturing places, moments, and stories that connect with people emotionally.</p>
+              <h3 data-project-field="service1Title">Travel &amp; Storytelling</h3>
+              <p data-project-field="service1Text">Capturing places, moments, and stories that connect with people emotionally.</p>
             </div>
           </div>
 
           <div class="service-item">
             <div class="service-icon">✉</div>
             <div>
-              <h3>Collaborations</h3>
-              <p>Creative projects, partnerships, product features, and long-term brand work.</p>
+              <h3 data-project-field="service2Title">Collaborations</h3>
+              <p data-project-field="service2Text">Creative projects, partnerships, product features, and long-term brand work.</p>
             </div>
           </div>
 
           <div class="service-item">
             <div class="service-icon">✦</div>
             <div>
-              <h3>Inquiries</h3>
-              <p>Have a project in mind? Let’s connect and see what we can create together.</p>
+              <h3 data-project-field="service3Title">Inquiries</h3>
+              <p data-project-field="service3Text">Have a project in mind? Let’s connect and see what we can create together.</p>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <h2 class="section-title">Send A Message</h2>
+        <h2 class="section-title" data-project-field="formTitle">Send A Message</h2>
 
-        <form class="contact-form" action="https://formspree.io/f/maqvrlrz" method="POST">
+        <form data-project-action="formAction" class="contact-form" action="https://formspree.io/f/maqvrlrz" method="POST">
           <div class="form-grid">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Email Address" required>
@@ -629,28 +653,28 @@
           </div>
         </form>
 
-        <p class="note">I’ll get back to you as soon as I can.</p>
+        <p class="note" data-project-field="note">I’ll get back to you as soon as I can.</p>
       </div>
     </section>
 
     <section class="connect-section">
       <div>
-        <h2 class="section-title">Let’s Connect</h2>
-        <p class="intro-copy">You can also reach out directly or connect with me on social.</p>
+        <h2 class="section-title" data-project-field="connectTitle">Let’s Connect</h2>
+        <p class="intro-copy" data-project-field="connectIntro">You can also reach out directly or connect with me on social.</p>
       </div>
 
       <div class="connect-links">
-        <a class="connect-link" href="mailto:filmsbyjdg@icloud.com">
+        <a class="connect-link" data-project-href="connect0" href="mailto:filmsbyjdg@icloud.com">
           <span>✉</span>
-          <div>Email: filmsbyjdg@icloud.com</div>
+          <div data-project-field="connect0Text">Email: filmsbyjdg@icloud.com</div>
         </a>
-        <a class="connect-link" href="https://www.instagram.com/by__jdg" target="_blank" rel="noopener">
+        <a class="connect-link" data-project-href="connect1" href="https://www.instagram.com/by__jdg" target="_blank" rel="noopener">
           <span>◎</span>
-          <div>Instagram: @by__jdg</div>
+          <div data-project-field="connect1Text">Instagram: @by__jdg</div>
         </a>
-        <a class="connect-link" href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">
+        <a class="connect-link" data-project-href="connect2" href="https://www.youtube.com/@by-jdg" target="_blank" rel="noopener">
           <span>▶</span>
-          <div>YouTube: @by-jdg</div>
+          <div data-project-field="connect2Text">YouTube: @by-jdg</div>
         </a>
       </div>
     </section>
@@ -658,12 +682,12 @@
     <section class="footer-visual">
       <div class="footer-card">
         <div class="quote-box">
-          <blockquote>“Great stories come from real moments.”</blockquote>
-          <p>— ByJDG</p>
+          <blockquote data-project-field="quote">“Great stories come from real moments.”</blockquote>
+          <p data-project-field="quoteBy">— ByJDG</p>
         </div>
         <div class="location-box">
-          <h2>Based in North Carolina</h2>
-          <p>Available for select projects, collaborations, and creative work.</p>
+          <h2 data-project-field="location">Based in North Carolina</h2>
+          <p data-project-field="availability">Available for select projects, collaborations, and creative work.</p>
           <div class="state-line"></div>
         </div>
       </div>
