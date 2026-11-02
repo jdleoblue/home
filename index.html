@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="white">
+<html lang="en" data-theme="white" data-about-tone="charcoal">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -835,6 +835,40 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+
+<style id="byjdg-about-tone">
+html[data-about-tone="stone"] #about {
+ --about-surface:#c8c2b8; --text:#292722; --muted:#45413a; --cinema-accent:#645027;
+}
+html[data-about-tone="taupe"] #about {
+ --about-surface:#62584f; --text:#fff9ee; --muted:#eee5d8; --cinema-accent:#f1d298;
+}
+html[data-about-tone="charcoal"] #about {
+ --about-surface:#2d2b28; --text:#f5f1e8; --muted:#d0c9bd; --cinema-accent:#dfbf82;
+}
+html[data-about-tone="stone"] #about,
+html[data-about-tone="taupe"] #about,
+html[data-about-tone="charcoal"] #about {
+ background:var(--about-surface); color:var(--text); border-color:var(--muted);
+}
+html[data-about-tone="stone"] #about p,
+html[data-about-tone="taupe"] #about p,
+html[data-about-tone="charcoal"] #about p { color:var(--muted); }
+html[data-about-tone="stone"] #about .lead,
+html[data-about-tone="taupe"] #about .lead,
+html[data-about-tone="charcoal"] #about .lead { color:var(--text); }
+html[data-about-tone="stone"] #about .small-link,
+html[data-about-tone="taupe"] #about .small-link,
+html[data-about-tone="charcoal"] #about .small-link { color:var(--cinema-accent); }
+</style>
+
   <meta name="description" content="Explore travel films by JDG, capturing coastal escapes, beautiful streets, local culture, and memorable moments from destinations near and far." />
   <meta property="og:title" content="by JDG | Travel Films" />
   <meta property="og:description" content="Explore travel films by JDG, capturing coastal escapes, beautiful streets, local culture, and memorable moments from destinations near and far." />
