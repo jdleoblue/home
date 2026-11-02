@@ -609,9 +609,14 @@
       --muted: #59564f; --line: rgba(40,36,28,.2);
       --panel: rgba(255,255,255,.65); --accent: #806025;
     }
-    html[data-theme="white"] .nav,
-    html[data-theme="white"] .nav-links {
+    html[data-theme="white"] .nav {
       background: rgba(255,255,255,.88); border-color: var(--line);
+    }
+    html[data-theme="white"] .nav-links {
+      background: transparent; border-color: var(--line);
+    }
+    @media (max-width:650px) {
+      html[data-theme="white"] .nav-links { background: rgba(255,255,255,.96); }
     }
     html[data-theme="white"] .section,
     html[data-theme="white"] .split,
