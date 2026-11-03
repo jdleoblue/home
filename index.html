@@ -1202,6 +1202,26 @@ Have you been to Mallorca?</p>
 
 
 
+<script id="byjdg-cta-hover-runtime">
+(() => {
+  // Enhance rendered links without changing the CMS's editable text markup.
+  document.querySelectorAll('#latest .film-card .watch-link, #about .small-link, #contact .project-invitation').forEach(link => {
+    link.classList.add('jdg-motion-cta');
+    if (link.querySelector('.cta-icon, .jdg-cta-arrow')) return;
+    const text = [...link.childNodes].reverse().find(node => node.nodeType === 3 && /→\s*$/.test(node.textContent));
+    if (!text) return;
+    const arrow = document.createElement('span');
+    arrow.className = 'jdg-cta-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '→';
+    text.textContent = text.textContent.replace(/→\s*$/, '');
+    text.after(arrow);
+  });
+})();
+</script>
+
+
+
 <script id="byjdg-hero-settings" type="application/json">{"mode":"rotating","interval":5,"images":["images/malta-harbor-hero-4ce9fce9.jpg","images/malta-cliffs-hero-e77deae6.jpg","images/malta-open-sea-hero-ff3d11b0.png"]}</script>
 <script id="byjdg-hero-runtime">(function(){
 const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
