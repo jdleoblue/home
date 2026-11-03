@@ -894,6 +894,29 @@ html[data-about-tone="charcoal"] #about .small-link { color:var(--cinema-accent)
   #latest .film-card::before { transition: none; }
 }
 </style>
+<style id="byjdg-cta-hover">
+  .jdg-motion-cta { position:relative; display:inline-block; width:fit-content; max-width:100%; align-self:flex-start; }
+  .jdg-motion-cta::after {
+    content:""; position:absolute; left:0; right:0; bottom:-6px;
+    height:1px; background:currentColor; transform:scaleX(0); transform-origin:left;
+  }
+  .jdg-motion-cta .jdg-cta-arrow { display:inline-block; }
+  @media (prefers-reduced-motion:no-preference) {
+    .jdg-motion-cta::after { transition:transform 320ms cubic-bezier(.22,.61,.36,1); }
+    .jdg-motion-cta .jdg-cta-arrow,
+    .jdg-motion-cta > .cta-icon { transition:transform 320ms cubic-bezier(.22,.61,.36,1); }
+    .jdg-motion-cta:focus-visible .jdg-cta-arrow { transform:translateX(5px); }
+    .jdg-motion-cta:focus-visible > .cta-icon { transform:translate(4px,-4px); }
+    @media (hover:hover) and (pointer:fine) {
+      .jdg-motion-cta:hover .jdg-cta-arrow { transform:translateX(5px); }
+      .jdg-motion-cta:hover > .cta-icon { transform:translate(4px,-4px); }
+    }
+  }
+  .jdg-motion-cta:focus-visible::after { transform:scaleX(1); }
+  @media (hover:hover) and (pointer:fine) {
+    .jdg-motion-cta:hover::after { transform:scaleX(1); }
+  }
+</style>
 <style id="byjdg-hero-rotation">.hero{isolation:isolate;overflow:hidden}.hero-slide{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1s ease;pointer-events:none}.hero-rotation-pause{position:absolute;right:24px;bottom:20px;z-index:3;color:#f5f1ea;background:transparent;border:0;border-radius:50%;padding:0;width:44px;height:44px;display:grid;place-items:center;opacity:.65;cursor:pointer;transition:opacity .2s}.hero-rotation-pause:hover{opacity:1}.hero-rotation-pause svg{display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}.hero-rotation-pause:focus-visible{outline:2px solid white;outline-offset:3px}@media(prefers-reduced-motion:reduce){.hero-slide,.hero-rotation-pause{display:none!important}}.hero-rotation-pause[hidden]{display:none}</style>
   <meta name="description" content="Explore travel films by JDG, capturing coastal escapes, beautiful streets, local culture, and memorable moments from destinations near and far." />
   <meta property="og:title" content="by JDG | Travel Films" />
@@ -1142,6 +1165,9 @@ Have you been to Mallorca?</p>
       link.addEventListener('click', closeMenu);
     });
   </script>
+
+
+
 
 
 
