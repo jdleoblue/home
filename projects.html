@@ -187,14 +187,17 @@
       align-items: flex-start;
     }
 
-    .service-icon {
+    .service-number {
       width: 34px;
       height: 34px;
-      border: 1px solid var(--line);
       display: grid;
       place-items: center;
       color: var(--accent);
-      font-size: 0.9rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-variant-numeric: lining-nums tabular-nums;
+      line-height: 1;
     }
 
     .service-item h3 {
@@ -739,7 +742,7 @@ html[data-tone-projects-footer="charcoal"] .footer select option{background:#2d2
 
         <div class="service-list">
           <div class="service-item">
-            <div class="service-icon">▣</div>
+            <div class="service-number" aria-hidden="true">01</div>
             <div>
               <h3 data-project-field="service0Title">Filmmaking &amp; Video Production</h3>
               <p data-project-field="service0Text">Commercials, brand films, documentaries, social content, and cinematic storytelling.</p>
@@ -747,7 +750,7 @@ html[data-tone-projects-footer="charcoal"] .footer select option{background:#2d2
           </div>
 
           <div class="service-item">
-            <div class="service-icon">⌖</div>
+            <div class="service-number" aria-hidden="true">02</div>
             <div>
               <h3 data-project-field="service1Title">Travel &amp; Storytelling</h3>
               <p data-project-field="service1Text">Capturing places, moments, and stories that connect with people emotionally.</p>
@@ -755,7 +758,7 @@ html[data-tone-projects-footer="charcoal"] .footer select option{background:#2d2
           </div>
 
           <div class="service-item">
-            <div class="service-icon">✉</div>
+            <div class="service-number" aria-hidden="true">03</div>
             <div>
               <h3 data-project-field="service2Title">Collaborations</h3>
               <p data-project-field="service2Text">Creative projects, partnerships, product features, and long-term brand work.</p>
@@ -763,7 +766,7 @@ html[data-tone-projects-footer="charcoal"] .footer select option{background:#2d2
           </div>
 
           <div class="service-item">
-            <div class="service-icon">✦</div>
+            <div class="service-number" aria-hidden="true">04</div>
             <div>
               <h3 data-project-field="service3Title">Inquiries</h3>
               <p data-project-field="service3Text">Have a project in mind? Let’s connect and see what we can create together.</p>
