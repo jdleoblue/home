@@ -868,7 +868,6 @@ html[data-about-tone="stone"] #about .small-link,
 html[data-about-tone="taupe"] #about .small-link,
 html[data-about-tone="charcoal"] #about .small-link { color:var(--cinema-accent); }
 </style>
-<style id="byjdg-hero-rotation">.hero{isolation:isolate;overflow:hidden}.hero-slide{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1s ease;pointer-events:none}.hero-rotation-pause{position:absolute;right:24px;bottom:20px;z-index:3;color:#f5f1ea;background:transparent;border:0;border-radius:50%;padding:0;width:44px;height:44px;display:grid;place-items:center;opacity:.65;cursor:pointer;transition:opacity .2s}.hero-rotation-pause:hover{opacity:1}.hero-rotation-pause svg{display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}.hero-rotation-pause:focus-visible{outline:2px solid white;outline-offset:3px}@media(prefers-reduced-motion:reduce){.hero-slide,.hero-rotation-pause{display:none!important}}.hero-rotation-pause[hidden]{display:none}</style>
   <meta name="description" content="Explore travel films by JDG, capturing coastal escapes, beautiful streets, local culture, and memorable moments from destinations near and far." />
   <meta property="og:title" content="by JDG | Travel Films" />
   <meta property="og:description" content="Explore travel films by JDG, capturing coastal escapes, beautiful streets, local culture, and memorable moments from destinations near and far." />
@@ -986,6 +985,7 @@ html[data-tone-home-footer="charcoal"] .footer input::placeholder,html[data-tone
 html[data-tone-home-footer="charcoal"] .footer .quote-box,html[data-tone-home-footer="charcoal"] .footer .service-icon,html[data-tone-home-footer="charcoal"] .footer .connect-link span{border-color:var(--line);}
 html[data-tone-home-footer="charcoal"] .footer select option{background:#2d2b28;color:var(--text);}
 </style>
+<style id="byjdg-hero-rotation">.hero{isolation:isolate;overflow:hidden}.hero-slide{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1s ease;pointer-events:none}.hero-rotation-pause{position:absolute;right:24px;bottom:20px;z-index:3;color:#f5f1ea;background:transparent;border:0;border-radius:50%;padding:0;width:44px;height:44px;display:grid;place-items:center;opacity:.65;cursor:pointer;transition:opacity .2s}.hero-rotation-pause:hover{opacity:1}.hero-rotation-pause svg{display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}.hero-rotation-pause:focus-visible{outline:2px solid white;outline-offset:3px}@media(prefers-reduced-motion:reduce){.hero-slide,.hero-rotation-pause{display:none!important}}.hero-rotation-pause[hidden]{display:none}</style>
 </head>
 
 <body>
@@ -1117,6 +1117,12 @@ Have you been to Mallorca?</p>
       link.addEventListener('click', closeMenu);
     });
   </script>\n\n\n\n\n\n
+
+
+
+
+
+
 <script id="byjdg-hero-settings" type="application/json">{"mode":"rotating","interval":5,"images":["images/malta-harbor-hero-4ce9fce9.jpg","images/malta-cliffs-hero-e77deae6.jpg","images/malta-open-sea-hero-ff3d11b0.png"]}</script>
 <script id="byjdg-hero-runtime">(function(){
 const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
@@ -1135,95 +1141,5 @@ button.addEventListener('click',()=>{paused=!paused;button.innerHTML=paused?'<sv
 document.addEventListener('visibilitychange',update);motion.addEventListener('change',update);update();
 })();
 </script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
-</body>');}
-module.exports={parse,validate,render};
-(function(){
-const configNode=document.getElementById('byjdg-hero-settings'),hero=document.querySelector('.hero');if(!configNode||!hero)return;
-const config=JSON.parse(configNode.textContent),motion=matchMedia('(prefers-reduced-motion: reduce)');
-if(config.mode!=='rotating'||config.images.length<2)return;
-const base=getComputedStyle(hero).backgroundImage;let index=0,active=0,timer=null,paused=false,loading=false,generation=0;
-const layers=[0,1].map(()=>{const el=document.createElement('div');el.className='hero-slide';el.setAttribute('aria-hidden','true');hero.prepend(el);return el;});
-function background(url){return base.replace(/url\((?:"[^"]*"|'[^']*'|[^)]*)\)/g,()=> 'url('+JSON.stringify(url)+')');}
-layers[0].style.backgroundImage=background(config.images[0]);layers[0].style.opacity='1';
-const button=document.createElement('button');button.className='hero-rotation-pause';button.type='button';button.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3" height="14" rx=".5"/><rect x="14" y="5" width="3" height="14" rx=".5"/></svg>';button.setAttribute('aria-label','Pause images');button.setAttribute('aria-pressed','false');hero.append(button);
-function stop(){clearTimeout(timer);timer=null;generation++;loading=false;}
-function schedule(){clearTimeout(timer);if(!paused&&!motion.matches&&!document.hidden)timer=setTimeout(next,config.interval*1000);}
-function next(){if(loading)return;loading=true;const ticket=generation,nextIndex=(index+1)%config.images.length,img=new Image();img.onload=()=>{if(ticket!==generation)return;loading=false;const other=1-active;layers[other].style.backgroundImage=background(config.images[nextIndex]);layers[other].style.opacity='1';layers[active].style.opacity='0';active=other;index=nextIndex;schedule();};img.onerror=()=>{if(ticket!==generation)return;loading=false;index=nextIndex;schedule();};img.src=config.images[nextIndex];}
-function upda</script>
 </body>
 </html>
