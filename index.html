@@ -729,7 +729,8 @@
   .featured-film { padding:72px 7vw; background:var(--bg); border-top:1px solid var(--line); }
   .featured-film[hidden] { display:none; }
   .feature-lead { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:36px; }
-  .cinema-eyebrow { font-size:.67rem; letter-spacing:.22em; text-transform:uppercase; color:var(--cinema-accent); margin-bottom:16px; }
+  .cinema-eyebrow, #latest .section-title { font-size:.67rem; font-weight:400; letter-spacing:.22em; text-transform:uppercase; color:var(--cinema-accent); margin-bottom:16px; }
+  #latest .section-title { margin-bottom:0; }
   .feature-lead h2 { font:400 clamp(2.2rem,4vw,3.9rem)/1.1 Georgia,serif; letter-spacing:-.04em; max-width:570px; }
   .feature-intro { max-width:440px; color:var(--muted); line-height:1.85; }
   .feature-image { display:block; background:var(--bg-soft); }
@@ -1227,6 +1228,7 @@ Have you been to Mallorca?</p>
   });
 })();
 </script>
+
 
 
 
