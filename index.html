@@ -762,7 +762,7 @@
   .gear-list span:first-child {font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:7px;}
   .contact { background:var(--bg-soft); border-top:1px solid var(--line);padding:72px 7vw; }
   .contact h2 {max-width:560px;font-size:clamp(2.3rem,4vw,3.5rem);line-height:1.1;letter-spacing:-.04em;}
-  .project-invitation {display:inline-block;margin-top:24px;color:var(--cinema-accent);}
+  html[data-theme] body #contact .project-invitation {display:inline-block;margin-top:24px;color:var(--text);}
   html[data-theme="white"] .contact {background:var(--bg);}
   @media(max-width:900px){.feature-lead{gap:28px}.contact{grid-template-columns:1fr}.gear-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:650px){
@@ -1227,6 +1227,9 @@ Have you been to Mallorca?</p>
   });
 })();
 </script>
+
+
+
 
 
 
