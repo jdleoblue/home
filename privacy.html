@@ -452,7 +452,7 @@ html[data-theme] body .img-missing::after{content:"Photo coming soon";position:a
  html[data-static-page] body :is(.section,.shop-section,.closing){padding:88px var(--gutter)}
 }
 @media(max-width:650px){
- html[data-static-page] body .nav{display:flex!important;flex-wrap:wrap;justify-content:center;gap:6px 0;padding:14px var(--gutter) 10px;height:auto!important}
+ html[data-static-page] body .nav,html[data-static-page] body .nav.is-scrolled{display:flex!important;flex-wrap:wrap;justify-content:center;gap:6px 0;padding:14px var(--gutter) 10px;height:auto!important}
  html[data-static-page] body .nav .logo{position:static!important;transform:none!important;margin:0!important;left:auto!important;top:auto!important;display:inline-flex}
  html[data-static-page] body .nav .mobile-menu-button,html[data-static-page] body .nav-overlay{display:none!important}
  html[data-static-page] body .nav-links{display:flex!important;position:static!important;transform:none!important;width:100%;height:auto;flex-direction:row;justify-content:center;gap:22px;padding:0;margin:0;background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;font-size:.66rem;visibility:visible;opacity:1}
@@ -469,6 +469,9 @@ html[data-theme] body .img-missing::after{content:"Photo coming soon";position:a
 }
 @media(max-width:650px){
  html[data-theme] body .nav{background:rgba(11,11,10,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+ html:not([data-static-page])[data-theme] body .nav,html:not([data-static-page])[data-theme] body .nav.is-scrolled{height:64px;min-height:64px;padding:0 var(--gutter);box-sizing:border-box;display:flex;align-items:center;justify-content:center;transition:background .4s ease,box-shadow .4s ease}
+ html:not([data-static-page])[data-theme] body .nav .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+ html:not([data-static-page])[data-theme] body .nav .mobile-menu-button{position:absolute;left:auto;right:var(--gutter);top:50%;transform:translateY(-50%);margin:0}
  html[data-theme] body .logo .site-logo-image{height:30px}
  html[data-theme] body .logo-wordmark{font-size:1.3rem}
  html[data-theme] body #top .hero h1{font-size:clamp(3.4rem,15vw,4.6rem)}
