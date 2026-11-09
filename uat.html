@@ -681,7 +681,7 @@ html[data-theme] body .hero-rotation-pause{right:var(--gutter);bottom:clamp(64px
 html[data-theme] body #top .refined-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px 24px;padding-bottom:26px;margin-bottom:44px;border-bottom:1px solid var(--rule)}
 html[data-theme] body #top .refined-head :is(.cinema-eyebrow,.section-title){margin:0}
 html[data-theme] body #top .refined-count{font-size:.72rem;letter-spacing:.2em;color:var(--muted)}
-html[data-theme] body #top .refined-title{font-size:clamp(2.2rem,3.4vw,3rem);line-height:1.05;margin-top:16px;color:var(--text)}
+html[data-theme] body #top .refined-title{font-family:var(--font-serif);font-weight:400;letter-spacing:-.005em;font-size:clamp(2.2rem,3.4vw,3rem);line-height:1.05;margin:16px 0 0;color:var(--text)}
 html[data-theme] body #top .refined-more{font-size:.72rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--text);opacity:.86;padding:12px 0}
 html[data-theme] body #top .refined-more:hover{opacity:1}
 html[data-theme] body #top :is(.refined-more,.hero-secondary) span{display:inline-block;transition:transform .35s ease}
@@ -916,7 +916,6 @@ html[data-theme] body .img-missing::after{content:"Photo coming soon";position:a
  html[data-theme] body #top .contact{grid-template-columns:minmax(0,1fr);padding:104px var(--gutter)}
 }
 @media(max-width:650px){
- html[data-theme] body .nav{background:rgba(11,11,10,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
  html:not([data-static-page])[data-theme] body .nav,html:not([data-static-page])[data-theme] body .nav.is-scrolled{height:64px;min-height:64px;padding:0 var(--gutter);box-sizing:border-box;display:flex;align-items:center;justify-content:center;transition:background .4s ease,box-shadow .4s ease}
  html:not([data-static-page])[data-theme] body .nav .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
  html:not([data-static-page])[data-theme] body .nav .mobile-menu-button{position:absolute;left:auto;right:var(--gutter);top:50%;transform:translateY(-50%);margin:0}
@@ -925,6 +924,9 @@ html[data-theme] body .img-missing::after{content:"Photo coming soon";position:a
  html[data-theme] body #top .hero h1{font-size:clamp(3.4rem,15vw,4.6rem)}
  html[data-theme] body #top .featured-film{padding-top:96px}
  html[data-theme] body #top #latest{padding-top:104px;padding-bottom:112px}
+ html[data-theme] body #top #latest .section-header{flex-direction:column;align-items:flex-start;gap:18px}
+ html[data-theme] body #top #latest .section-header>div{width:100%}
+ html[data-theme] body #top .refined-more{align-self:flex-start}
  html[data-theme] body #top .contact-form{flex-direction:column}
  html[data-theme] body #top .contact-form input{flex:none;width:100%;height:56px;border-right:1px solid var(--line)}
  html[data-theme] body #top .contact-form button{width:100%;height:54px}
